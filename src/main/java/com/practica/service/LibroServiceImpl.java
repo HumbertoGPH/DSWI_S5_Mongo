@@ -29,5 +29,12 @@ public class LibroServiceImpl  implements LibroService {
     public List<Libro> listaLibro() {
        return repository.findAll();
     }
+
+
+    //Nueva Consulta
+    @Override
+    public List<Libro> listaPorCategorias(List<String> categories) {
+        return repository.listaPorCategorias(categories);
+    }
     
 }

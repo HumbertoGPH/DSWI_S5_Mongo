@@ -11,4 +11,8 @@ public interface LibroService {
 	public abstract Libro buscaLibroPorId(int id);
 
 	public abstract List<Libro> listaLibroPorCategoria(String categoria);
+
+
+	 //Consulta usando $in  en categorias
+	 public abstract List<Libro> listaPorCategorias(List<String> categories);
 }

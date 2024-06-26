@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -38,6 +39,14 @@ public class LibroController {
 	@ResponseBody
 	public List<Libro> listaLibroXCategoria(@PathVariable("cate") String categoria) {
 		return service.listaLibroPorCategoria(categoria);
+	}
+
+	//Lista con In en Categorias  Aquii
+	    @GetMapping("/listaLibroPorCategorias")  //http://localhost:8092/rest/libro/listaLibroPorCategorias?categories=Java&categories=mobile
+
+	@ResponseBody
+	public List<Libro> lista(@RequestParam("categories") List<String> categories) {
+        return service.listaPorCategorias(categories);
 	}
 
 }

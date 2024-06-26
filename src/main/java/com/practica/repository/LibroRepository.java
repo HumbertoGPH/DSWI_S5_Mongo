@@ -16,4 +16,14 @@ public interface LibroRepository  extends MongoRepository <Libro,Integer>{
     //Agregamos para hacer las consultas para que busque por el mobre asi como el like
     @Query("{ 'categories':  ?0 }")
     public abstract List<Libro> listaLibroPorCategoria(String categoria);
+
+
+
+    
+    //Para buscar Practica Mongo S6
+    @Query("{ 'categories' : { $in: ?0 } }")
+    public abstract List<Libro> listaPorCategorias(List<String> categories);
+
+
+
 }
